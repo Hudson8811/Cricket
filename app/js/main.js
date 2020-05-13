@@ -7,40 +7,16 @@ $(".search-form__button--op").click(function(){
     $(this).toggleClass("active");
     $(".main-menu").toggleClass("active");
   });
-  var events_slider = new Swiper('.swiper-container', {
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    spaceBetween: 10,
-    autoplay:true,
-    loop:true,
-    centeredSlides: true,
-    // init: false,
-  
-    breakpoints: {
-      640: {
-        centeredSlides: false,
-        slidesPerGroup: 2,
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      768: {
-        slidesPerGroup: 3,
-        slidesPerView: 3,
-        spaceBetween: 20,
-        centeredSlides: false,
-      },
-      1024: {
-        slidesPerGroup: 4,
-        slidesPerView: 4,
-        spaceBetween: 20,
-        centeredSlides: false,
-      },
-    }
+
+  $(".teams__button").click(function(){
+    $(this).toggleClass("active");
+    $(".teams__item-container:nth-child(n+10)").slideToggle(300);
   });
 
   $('.events__container .swiper-container').each(function(){
     var events_slider = new Swiper(this, {
-    slidesPerView: 1,
+      slidesPerView: 'auto',
+    loopedSlides:40,
     slidesPerGroup: 1,
     spaceBetween: 10,
     autoplay:true,
@@ -53,17 +29,14 @@ $(".search-form__button--op").click(function(){
     breakpoints: {
         640: {
           slidesPerGroup: 2,
-          slidesPerView: 2,
           spaceBetween: 20,
         },
         900: {
           slidesPerGroup: 3,
-          slidesPerView: 3,
           spaceBetween: 20,
         },
         1200: {
           slidesPerGroup: 4,
-          slidesPerView: 4,
           spaceBetween: 20,
         },
       } 
