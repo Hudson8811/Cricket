@@ -297,15 +297,23 @@ header{
         }
     }
 
-    &__search-form{
-        
-    }
+    
     &__burger{
         margin: 0 20px 0 auto;
+
+        &--mobile-ml{
+            margin: 0 10px 0 auto;
+        }
     }
     &__right{
         @include for-md(){
             margin-left: 20px;
+        }
+
+        &--mobile-ml{
+            @include for-md(){
+                margin-left: 10px;
+            }
         }
     }
     &__social{
@@ -313,6 +321,41 @@ header{
             display: none;
         }
     }
+    .wSelect{
+        margin-top: 10px;
+        font-size: 15px;
+        line-height: 20px;
+        color: $white-brown;
+        font-family: $Rubic;
+        font-weight: 500;
+
+        @include for-tiny-mob(){
+            width: 40px !important;
+            font-size: 0;
+        }
+        @include for-tiny-mob(){
+            margin-top: 0;
+        }
+
+        
+        .wSelect-options-holder{
+            background-color: $white;
+            @include for-tiny-mob(){
+                width: 30px !important;
+                font-size: 0;
+                min-width: 30px;
+                max-width: 30px;
+                margin-left: -5px;
+            }
+        }
+        .wSelect-selected{
+            margin: 0px 20px 0px 0;
+        }
+        .wSelect-option-icon{
+            padding-left: 25px;
+        }
+    }
+    
 }
 .main-menu{
     @include for-md(){
@@ -1342,4 +1385,12 @@ header{
         line-height: 18px;
         font-weight: 700;
     }
+}
+
+.wSelect-arrow{
+    background-image: url(../images/icons/select-arrow.svg);
+}
+
+.wSelect-option-value,.wSelect-selected{
+    background-size: 18px 18px;
 }

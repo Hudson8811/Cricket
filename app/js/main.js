@@ -118,3 +118,9 @@ $(".main-menu> ul > li > span").on('click', function(){
   }  
 });
 
+
+
+$('.select-js').wSelect();
+
+
+
