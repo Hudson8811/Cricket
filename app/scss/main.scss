@@ -236,7 +236,7 @@ header{
     font-size: 35px;
     // font-size: calc(24px + 11 * ((100vw - 320px) / (1216 - 320)));
     font-size: calc(25px + 10 * (100vw - 320px) / (1920 - 320));
-    line-height: 41px;
+    line-height: calc(28px + 13 * (100vw - 320px) / (1920 - 320));
     color: $dark;
     font-family: $Rubic;
     font-weight: 700;
@@ -268,6 +268,12 @@ header{
 
     &--lit-padding{
         padding: 30px 0;
+    }
+    &--medium-padding{
+        padding: 70px 0;
+        @include for-md(){
+            padding: 35px 0;
+        }
     }
     &--big-padding{
         padding:110px 0;;
@@ -1393,4 +1399,37 @@ header{
 
 .wSelect-option-value,.wSelect-selected{
     background-size: 18px 18px;
+}
+.error-page{
+    padding: 70px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgba(#D99A6C, .1);
+    border-radius: 5px;
+
+    @include for-md(){
+        padding: 30px 20px;
+    }
+
+    &__title{
+        margin-bottom: 42px;
+        @include for-md(){
+            margin-bottom: 20px;
+        }
+    }
+    &__image{
+        max-width: 100%;
+    }
+    &__desc{
+        max-width: 500px;
+        margin: 24px auto 40px;
+        @include for-md(){
+            margin: 15px auto 20px;
+        }
+    }
+    &__button{
+        @include for-tiny-mob(){
+            width: 100%;
+        }
+    }
 }
