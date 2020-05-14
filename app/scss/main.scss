@@ -175,6 +175,9 @@ header{
     width: 100%;
     position: relative;
     overflow: hidden;
+    @include for-md(){
+        overflow: visible;
+    }
 }
 .side-bar{
     margin-left: 20px;
@@ -564,6 +567,20 @@ header{
             padding-right: 0;
             margin-bottom: 30px;
         }
+
+        &--on-mobile{
+            display: none;
+            @include for-md(){
+                display: block;
+            }
+        }
+        &--on-desktop{
+            display: block;
+
+            @include for-md(){
+                display: none;
+            }
+        }
         &--w33-3{
             width: 33.3%;
             @include for-sm(){
@@ -612,6 +629,16 @@ header{
             width: 100%;
         }
     }
+
+    &__pagination{
+        margin-top: 10px;
+        margin-bottom: 40px;
+
+        @include for-md(){
+           margin-top: 0;
+           margin-bottom: 20px;
+        }
+    }
 }
 .article{
 
@@ -621,7 +648,7 @@ header{
         border-radius: 5px;
         background-color: #F8F8F8;
         height: 100%;
-        @include for-sm(){
+        @include for-md(){
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -1518,5 +1545,54 @@ header{
         color: $white-brown;
         font-family: $Rubic;
         font-weight: 500;
+    }
+}
+
+.pagination{
+    background-color: #F8F8F8;
+    border-radius: 5px;
+    @include for-md(){
+       margin-left: -20px;
+       margin-right: -20px;
+
+        
+    }
+    &__list{
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+    }
+    &__link{
+        display: block;
+        padding: 15px 20px;
+        font-size: 15px;
+        line-height: 20px;
+        color: $white-brown;
+        font-family: $Rubic;
+        font-weight: 500;
+        transition: .3s;
+
+        &--active,&:hover{
+            background-color: $red;
+            color: $white;
+        }
+    }
+    &__dots{
+        font-size: 15px;
+        line-height: 20px;
+        font-family: $Rubic;
+        font-weight: 500;
+        color: $grey;
+        padding: 0 20px;
+    }
+    &__list-item{
+        @include for-sm(){
+            &:nth-child(n+6){
+                display: none;
+            }
+        }
     }
 }
