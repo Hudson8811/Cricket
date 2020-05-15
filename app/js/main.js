@@ -43,6 +43,36 @@ $(".search-form__button--op").click(function(){
   });
   });
 
+  $('.players__slider .swiper-container').each(function(){
+    var events_slider = new Swiper(this, {
+      watchOverflow:true,
+      slidesPerView: 3,
+    slidesPerGroup: 3,
+    spaceBetween: 10,
+    autoplay:true,
+    loop:false,
+    navigation: {
+        nextEl: $(this).parent().find('.swiper-button-next'),
+        prevEl: $(this).parent().find('.swiper-button-prev'),
+    },
+    
+    breakpoints: {
+        640: {
+          slidesPerGroup: 2,
+          spaceBetween: 20,
+        },
+        900: {
+          slidesPerGroup: 3,
+          spaceBetween: 20,
+        },
+        1200: {
+          slidesPerGroup: 9,
+          spaceBetween: 20,
+          slidesPerView: 9,
+        },
+      } 
+  });
+  });
   $('.ticker__text').simplemarquee({
     speed: 100,
     cycles: Infinity,
