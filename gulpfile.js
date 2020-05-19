@@ -29,7 +29,7 @@ gulp.task('css', function(){
   return gulp.src([
     'node_modules/normalize.css/normalize.css',
     'assest/css/swiper.css',
-    'assest/css/wSelect.css'
+    'assest/css/wSelect.css',
   ])
     .pipe(concat('_libs.scss'))
     .pipe(gulp.dest('app/scss'))
@@ -52,6 +52,7 @@ gulp.task('js', function(){
     'assest/js/swiper.js',
     'assest/js/jquery.simplemarquee.js',
     'assest/js/wSelect.js',
+    'assest/js/jquery.validate.min.js'
   ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())

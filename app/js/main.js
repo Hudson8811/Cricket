@@ -158,20 +158,20 @@ $(".main-menu> ul > li > span").on('click', function(){
 
 $('.select-js').wSelect();
 
-// $(".comments__form").validate({
-//   rules:{
-//      login:{
-//        required: true,
-//        minlength: 4,
-//        maxlength: 16,
-//      },
-//      pswd:{
-//        required: true,
-//        minlength: 6,
-//        maxlength: 16,
-//      },
-//   },
-// });
+$(".comments__form").validate({
+  rules:{
+     login:{
+       required: true,
+       minlength: 4,
+       maxlength: 16,
+     },
+     pswd:{
+       required: true,
+       minlength: 6,
+       maxlength: 16,
+     },
+  },
+});
 
 // $(".team-page__tabs-caption").click(function(){  // задаем функцию при нажатиии на элемент <button> 
 //   $(this).text(function(index, text){ // передаем функцию в качестве параметра метода 	
