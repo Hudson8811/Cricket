@@ -43,6 +43,37 @@ $(".search-form__button--op").click(function(){
   });
   });
 
+  $('.similar-news__slider .swiper-container').each(function(){
+    var events_slider = new Swiper(this, {
+      slidesPerView: 'auto',
+    loopedSlides:40,
+    slidesPerGroup: 1,
+    spaceBetween: 15,
+    // autoplay:true,
+    loop:true,
+    // navigation: {
+    //     nextEl: $(this).parent().find('.swiper-button-next'),
+    //     prevEl: $(this).parent().find('.swiper-button-prev'),
+    // },
+    
+    breakpoints: {
+        640: {
+          slidesPerGroup: 2,
+          spaceBetween: 20,
+        },
+        767: {
+          slidesPerGroup: 2,
+          spaceBetween: 20,
+          slidesPerGroup: 2,
+        },
+        1200: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 20,
+        },
+      } 
+  });
+  });
   $('.players__slider .swiper-container').each(function(){
     var events_slider = new Swiper(this, {
       watchOverflow:true,
@@ -58,11 +89,13 @@ $(".search-form__button--op").click(function(){
     
     breakpoints: {
         640: {
-          slidesPerGroup: 2,
+          slidesPerGroup: 5,
+          slidesPerView: 5,
           spaceBetween: 20,
         },
         900: {
-          slidesPerGroup: 3,
+          slidesPerView: 7,
+          slidesPerGroup: 7,
           spaceBetween: 20,
         },
         1200: {
@@ -125,5 +158,43 @@ $(".main-menu> ul > li > span").on('click', function(){
 
 $('.select-js').wSelect();
 
+// $(".comments__form").validate({
+//   rules:{
+//      login:{
+//        required: true,
+//        minlength: 4,
+//        maxlength: 16,
+//      },
+//      pswd:{
+//        required: true,
+//        minlength: 6,
+//        maxlength: 16,
+//      },
+//   },
+// });
+
+// $(".team-page__tabs-caption").click(function(){  // задаем функцию при нажатиии на элемент <button> 
+//   $(this).text(function(index, text){ // передаем функцию в качестве параметра метода 	
+//     return "Этот элемент имеет индекс - " + index + (". Старое содержимое: " + text);  // возвращаем значение индекса элемента и старое содержимое элемента
+// });
+// });
+
+$(".team-page__tabs-select").click(function(){ 
+  $(this).toggleClass("open");
+  $(this).next().slideToggle();
+ });
 
 
+ $(".team-page__tabs-caption").click(function(){ 
+ 
+ 
+
+  if(windowSize < 851){
+    $(this).parent().slideToggle();
+    val = $(this).text();
+    $(this).parent().prev().text(val);
+  }
+ });
+
+
+ 
