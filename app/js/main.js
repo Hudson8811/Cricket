@@ -12,41 +12,67 @@ $(".search-form__button--op").click(function(){
     $(this).toggleClass("active");
     $(".teams__item-container:nth-child(n+10)").slideToggle(300);
   });
-
-  $('.events__container .swiper-container').each(function(){
-    var events_slider = new Swiper(this, {
-      slidesPerView: 'auto',
-    loopedSlides:40,
-    slidesPerGroup: 1,
-    spaceBetween: 10,
-    autoplay:true,
-    loop:true,
-    navigation: {
-        nextEl: $(this).parent().find('.swiper-button-next'),
-        prevEl: $(this).parent().find('.swiper-button-prev'),
-    },
+  $('.select-js').wSelect();
+  // $('.events__container .swiper-container').each(function(){
+  //   var events_slider = new Swiper(this, {
+  //     slidesPerView: 'auto',
+  //     speed:1000,
+  //     slidesPerGroup: 1,
+  //     spaceBetween: 10,
+  //     autoplay: {
+  //       delay: 5000,
+  //     },
+  //     loop:true,
+  //     navigation: {
+  //         nextEl: $(this).parent().find('.swiper-button-next'),
+  //         prevEl: $(this).parent().find('.swiper-button-prev'),
+  //     },
     
-    breakpoints: {
-        640: {
-          slidesPerGroup: 2,
-          spaceBetween: 20,
-        },
-        900: {
-          slidesPerGroup: 3,
-          spaceBetween: 20,
-        },
-        1200: {
-          slidesPerGroup: 4,
-          spaceBetween: 20,
-        },
-      } 
-  });
+  //   breakpoints: {
+  //       640: {
+  //         slidesPerGroup: 1,
+  //         spaceBetween: 20,
+  //       },
+  //       900: {
+  //         slidesPerGroup: 2,
+  //         spaceBetween: 20,
+  //       },
+  //       1200: {
+  //         slidesPerGroup: 3,
+  //         spaceBetween: 20,
+  //       },
+  //     } 
+  // });
+  // });
+
+  $('.events__container .swiper-wrapper').slick({
+    nextArrow: '<div class="swiper-arrow swiper-button-next"><svg><use xlink:href="images/sprite.svg#icon-slider-arrow" /></svg></div>',
+    prevArrow: '<div class="swiper-arrow swiper-button-prev"><svg><use xlink:href="images/sprite.svg#icon-slider-arrow" /></svg></div>',
+    variableWidth: true,
+    autoplay:true,
+    slidesToScroll:4,
+    speed:700,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          arrows: false,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          slidesToScroll: 1
+        }
+      }
+    ]
   });
 
   $('.similar-news__slider .swiper-container').each(function(){
     var events_slider = new Swiper(this, {
       slidesPerView: 'auto',
-    loopedSlides:40,
     slidesPerGroup: 1,
     spaceBetween: 15,
     // autoplay:true,
@@ -88,17 +114,37 @@ $(".search-form__button--op").click(function(){
     },
     
     breakpoints: {
+      450: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+        spaceBetween: 20,
+      },
         640: {
           slidesPerGroup: 5,
           slidesPerView: 5,
           spaceBetween: 20,
         },
-        900: {
+        850: {
           slidesPerView: 7,
           slidesPerGroup: 7,
           spaceBetween: 20,
         },
-        1200: {
+        900: {
+          slidesPerView: 8,
+          slidesPerGroup: 8,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 7,
+          slidesPerGroup: 7,
+          spaceBetween: 20,
+        },
+        1150: {
+          slidesPerView: 8,
+          slidesPerGroup: 8,
+          spaceBetween: 20,
+        },
+        1280: {
           slidesPerGroup: 9,
           spaceBetween: 20,
           slidesPerView: 9,
@@ -139,8 +185,8 @@ $(".main-menu> ul > li > span").on('click', function(){
   if(windowSize < 1025){
   if ($(this).hasClass("js-active")) {
       $(this).removeClass("js-active");
-      $(this).next().removeClass("js-active");
-      $(this).next().slideToggle();
+      $(this).next().next().removeClass("js-active");
+      $(this).next().next().slideToggle();
       
   } else {
     
@@ -148,15 +194,15 @@ $(".main-menu> ul > li > span").on('click', function(){
     $(this).closest(".main-menu").find("ul.js-active").removeClass("js-active");
     $(".main-menu > ul > li > span").removeClass("js-active");
     $(this).addClass("js-active");
-    $(this).next().addClass("js-active");
-    $(this).next().slideToggle();
+    $(this).next().next().addClass("js-active");
+    $(this).next().next().slideToggle();
   }
   }  
 });
 
 
 
-$('.select-js').wSelect();
+
 
 $(".comments__form").validate({
   rules:{
@@ -198,3 +244,27 @@ $(".team-page__tabs-select").click(function(){
 
 
  
+
+ var top_show = 500; // В каком положении полосы прокрутки начинать показ кнопки "Наверх"
+  var delay = 1000; // Задержка прокрутки
+  $(document).ready(function() {
+    $(window).scroll(function () { // При прокрутке попадаем в эту функцию
+      /* В зависимости от положения полосы прокрукти и значения top_show, скрываем или открываем кнопку "Наверх" */
+      if ($(this).scrollTop() > top_show) $('.button-up').fadeIn();
+      else $('.button-up').fadeOut();
+    });
+    $('.button-up').click(function () { // При клике по кнопке "Наверх" попадаем в эту функцию
+      /* Плавная прокрутка наверх */
+      $('body, html').animate({
+        scrollTop: 0
+      }, delay);
+    });
+  });
+
+  $(function(){
+    $(".article__desc").dotdotdot({
+      height:72
+    });
+});
+  
+
