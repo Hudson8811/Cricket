@@ -2,7 +2,19 @@ $(".search-form__button--op").click(function(){
     $(".search-form").toggleClass("active");
   });
 
+  $(function(){
+    $(document).click(function(event) {
+      if ($(event.target).closest(".search-form").length) return;
+      $(".search-form").removeClass("active");
+      event.stopPropagation();
+    });
+  });
 
+  $(document).keyup(function(e) {
+    if (e.keyCode === 27) { 
+        $('.search-form').removeClass("active");
+    }
+});
   $(".header-top__burger").click(function(){
     $(this).toggleClass("active");
     $(".main-menu").toggleClass("active");
