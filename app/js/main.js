@@ -64,6 +64,7 @@ $(".search-form__button--op").click(function(){
     autoplay:true,
     slidesToScroll:4,
     speed:700,
+    loop:true,
     responsive: [
       {
         breakpoint: 1024,

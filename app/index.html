@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body>
+   
     <div class="wrapper">
+        
         <header class="header" id="header">
             <div class="header-top">
                 <div class="container">
@@ -456,11 +458,24 @@
                                 
                             </li>
                         </ul>
+                        <div class="social main-menu__social">
+                            <ul class="social__list">
+                                <li class="social__list-item">
+                                    <a class="social__link" href="#" style="background-image: url(images/social/facebook.svg);"></a>
+                                </li>
+                                <li class="social__list-item">
+                                    <a class="social__link" href="#" style="background-image: url(images/social/twitter.svg);"></a>
+                                </li>
+                                <li class="social__list-item">
+                                    <a class="social__link" href="#" style="background-image: url(images/social/instagramm.svg);"></a>
+                                </li>
+                            </ul>
+                        </div>
                         <form class="search-form main-menu__search-form" action="#">
                             <div class="search-form__button search-form__button--op">
                             </div>
                           <label class="search-form__label" for="search-input">
-                           <input type="text" class="search-form__input" id="search-input" placeholder="Поиск">
+                           <input type="text" class="search-form__input" name="search" id="search-input" placeholder="Поиск">
                             <button class="search-form__button search-form__button--abs"></button>
                           </label>
                         </form>
@@ -474,20 +489,13 @@
                         <div class="search-form__button search-form__button--op">
                         </div>
                       <label class="search-form__label" for="search-input">
-                       <input type="text" class="search-form__input" id="search-input" placeholder="Поиск">
+                       <input type="text" class="search-form__input" name="search" id="search-input" placeholder="Поиск">
                         <button class="search-form__button search-form__button--abs"></button>
                       </label>
                     </form>
-                    <!-- <form class="search-form header-top__search-form" action="#">
-                        <div class="search-form__button search-form__button--op">
-                        </div>
-                      <label class="search-form__label" for="search-input">
-                       <input type="text" class="search-form__input" id="search-input" placeholder="Поиск">
-                        <button class="search-form__button search-form__button--abs"></button>
-                      </label>
-                    </form> -->
+                  
                     <div class="header-top__right">
-                        <nav class="social header-top__social">
+                        <div class="social header-top__social">
                             <ul class="social__list">
                                 <li class="social__list-item">
                                     <a class="social__link" href="#" style="background-image: url(images/social/facebook.svg);"></a>
@@ -499,7 +507,7 @@
                                     <a class="social__link" href="#" style="background-image: url(images/social/instagramm.svg);"></a>
                                 </li>
                             </ul>
-                        </nav>
+                        </div>
                     </div>
                    </div>
                 </div>
@@ -1432,6 +1440,7 @@
                 </div>
             </div>
         </header>
+        
         <main class="main">
             <div class="container container--flex">
                    <div class="page-content">
@@ -2560,7 +2569,7 @@
                         <div class="footer__logo logo">
                             <a class="logo__image" href="/" style="background-image: url(images/logo.svg);"></a>
                         </div>
-                        <nav class="social footer__social">
+                        <div class="social footer__social">
                             <ul class="social__list social__list--justify-center">
                                 <li class="social__list-item">
                                     <a class="social__link" href="#" style="background-image: url(images/social/facebook.svg);"></a>
@@ -2572,7 +2581,7 @@
                                     <a class="social__link" href="#" style="background-image: url(images/social/instagramm.svg);"></a>
                                 </li>
                             </ul>
-                        </nav>
+                        </div>
                     </div>
                     <nav class="footer__nav">
                         <ul class="footer__list">
@@ -2619,14 +2628,16 @@
                 </div>
             </div>
         </footer>
-        <div class="button-up">
-            <div class="button-up__container">
-                <svg class="button-up__icon">
-                    <use xlink:href="images/sprite.svg#icon-arrow-up">
-                </svg>
-            </div>
+       
+    </div>
+    <div class="button-up">
+        <div class="button-up__container">
+            <svg class="button-up__icon">
+                <use xlink:href="images/sprite.svg#icon-arrow-up">
+            </svg>
         </div>
     </div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/libs.min.js"></script>
    

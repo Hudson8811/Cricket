@@ -15,6 +15,7 @@ body{
     @include for-md(){
         font-size: 15px;
         line-height: 22px;
+       
     }
 }
 a{
@@ -70,9 +71,9 @@ header{
     display: flex;
     flex-direction: column;
     height: 100%;
-    @include for-md(){
-        overflow-x: hidden;
-    }
+    // @include for-md(){
+    //     overflow-x: hidden;
+    // }
 }
 .container{
     max-width: 1216px;
@@ -346,11 +347,18 @@ header{
             margin-left: 20px;
         }
 
+        
+
         &--mobile-ml{
             @include for-md(){
+                display: block !important;
                 margin-left: 20px;
             }
         }
+
+    @include for-tiny-mob(){
+        display: none;
+    }
     }
     &__social{
         @include for-tiny-mob(){
@@ -389,11 +397,20 @@ header{
                 box-sizing: border-box;
             }
             @include for-tiny-mob(){
-                width: 30px !important;
-                font-size: 0;
-                min-width: 30px;
-                max-width: 30px;
+               
+                font-size: 12px !important;
+                line-height: 15px;
+                right: 0;
+                left: auto;
+               
                 margin-left: -5px;
+            }
+
+            .wSelect-option-value{
+                @include for-tiny-mob(){
+                    font-size: 12px;
+                    line-height: 15px;
+                }
             }
         }
        
@@ -414,12 +431,17 @@ header{
     position: relative;
     display: flex;
     align-items: center;
+    
     @include for-md(){
+        flex-direction: column;
+        align-items: flex-start;
         position: absolute;
         top: 100%;
         visibility: hidden;
         left: -20px;
         width: calc(100% + 40px);
+        margin-top: 15px;
+        padding-bottom: 20px;
         background-color: $white;
        transform: translateY(150%);
        opacity: 0;
@@ -427,6 +449,13 @@ header{
        transition: .3s;
 
        
+    }
+    &__social{
+        display: none;
+        @include for-md(){
+            display: block;
+            padding-left: 25px;
+        }
     }
 
     &__search-form{
@@ -536,7 +565,7 @@ header{
 }
 .submenu{
     @include for-md-desktop(){
-        margin-top: 15px;
+        margin-top: 42px;
         padding: 40px 30px;
         box-sizing: border-box;
         background-color: $white;
@@ -658,7 +687,7 @@ header{
             @include for-sm(){
                 display: block;
             }
-            @include for-tiny-tablet(){
+            @include for-tiny-mob(){
                 display: none;
             }
         }
@@ -916,7 +945,7 @@ header{
 
     &__label{
         position: absolute;
-        right: 0;
+        right: 30px;
         top: 50%;
         margin-top: -25px;
         width: 0;
@@ -924,6 +953,9 @@ header{
         visibility: hidden;
         transition: .3s;
         z-index: 500;
+        @include for-md(){
+            margin-top: -35px;
+        }
 
     }
     &__input{
@@ -934,6 +966,10 @@ header{
         font-weight: 500;
         height: 50px;
         background-color: $white-brown;
+
+        @include for-md(){
+            height: 70px;
+        }
 
         &::placeholder{
             color:$white;
@@ -986,15 +1022,10 @@ header{
         //     padding: 0 12.5px;
         // }
         .slick-list{
-            padding-left: calc(100% - 930px);
+           
             box-sizing: border-box;
 
-            @include for-md(){
-                padding-left: 100px;
-            }
-            @include for-tiny-mob(){
-                padding-left: 25px;
-            }
+           
         }
         .slick-slide{
             width: 314px;
@@ -2801,7 +2832,7 @@ header{
         }
     }
     &__article-link{
-        font-weight: 400;
+        font-weight: 600;
     }
     &__teg{
         position: absolute;
