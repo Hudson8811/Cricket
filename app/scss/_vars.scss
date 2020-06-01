@@ -45,8 +45,8 @@ $Root:'PT Root UI',sans-serif;
     @media (min-width: 650px) { @content; }
   }
   @mixin for-medium-mob{
-    @media (max-width: 450px) { @content; }
+    @media (max-width: 500px) { @content; }
   }
   @mixin for-lit-mob {
-    @media (max-width: 350px) { @content; }
+    @media (max-width: 450px) { @content; }
     }

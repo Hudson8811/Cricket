@@ -452,7 +452,7 @@ header{
     }
     &__social{
         display: none;
-        @include for-md(){
+        @include for-tiny-mob(){
             display: block;
             padding-left: 25px;
         }
@@ -945,7 +945,7 @@ header{
 
     &__label{
         position: absolute;
-        right: 30px;
+        right: 0;
         top: 50%;
         margin-top: -25px;
         width: 0;
@@ -955,6 +955,7 @@ header{
         z-index: 500;
         @include for-md(){
             margin-top: -35px;
+            right: 30px;
         }
 
     }
@@ -1010,7 +1011,7 @@ header{
         padding: 0 23px;
 
         @include for-sm{
-            padding: 0;
+            padding: 0 5px;
             width: 100%;
             
         }
@@ -1035,27 +1036,10 @@ header{
             transition: .3s;
             @include for-md(){
                 width: 293px;
-                opacity: 0.3;
+               
             }
         }
-        .slick-slide.slick-active{
-            opacity: 1;
-        }
-        .slick-slide.slick-active + .slick-slide{
-            opacity: 1;
-            @include for-tiny-mob(){
-                opacity: .3;
-            }
-        }
-        .slick-slide.slick-active + .slick-slide + .slick-slide{
-            opacity: 1;
-            @include for-lit-md(){
-                opacity: .3;
-            }
-        }
-        .slick-slide.slick-active + .slick-slide + .slick-slide + .slick-slide{
-            opacity: .3;
-        }
+       
        
     }
     
