@@ -28,7 +28,6 @@ gulp.task('scss', function(){
 gulp.task('css', function(){
   return gulp.src([
     'node_modules/normalize.css/normalize.css',
-    'assest/css/swiper.css',
     'assest/css/slick.css',
     'assest/css/wSelect.css',
   ])
@@ -50,7 +49,6 @@ gulp.task('script', function(){
 gulp.task('js', function(){
   return gulp.src([
     'assest/js/mask.js',
-    'assest/js/swiper.js',
     'assest/js/jquery.simplemarquee.js',
     'assest/js/wSelect.js',
     'assest/js/slick.js',

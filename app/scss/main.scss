@@ -999,6 +999,10 @@ header{
         }
     }
 }
+.swiper-arrow {
+  
+    cursor: pointer;
+}
 .events{
     padding: 20px 0;
 
@@ -1045,6 +1049,9 @@ header{
     
 
     .swiper-arrow{
+        position: absolute;
+        top: 50%;
+        margin-top: -8.5px;
         border: none;
         outline: none;
         width: 33px;
@@ -1889,6 +1896,7 @@ header{
         color: $white-brown;
     }
     .swiper-arrow{
+        position: absolute;
         margin-top: 0;
         top:-70px;
         outline: none;
@@ -2430,7 +2438,7 @@ header{
         ol{
             padding: 0;
             counter-reset: list 0;
-
+            list-style: none;
             li{
                 font-size: 16px;
                 line-height: 19px;
@@ -2847,18 +2855,23 @@ header{
 }
 .similar-news{
     &__slider{
+        margin: 0 -10px;
         padding-bottom: 30px;
         transition: .3s;
 
-        .swiper-slide{
+        .slick-slide{
             @include for-sm(){
                 opacity: .7;
                 width: 260px;
             }
         }
-        .swiper-slide.swiper-slide-active{
+        .slick-slide.slick-active{
             opacity: 1;
         }
+    }
+    .article{
+        padding: 0 10px;
+        box-sizing: border-box;
     }
 }
 .team-page{
@@ -3052,6 +3065,7 @@ header{
         background-color: $grey;
     }
     .swiper-arrow{
+        position: absolute;
         margin-top: 0;
         top: -70px;
         outline: none;

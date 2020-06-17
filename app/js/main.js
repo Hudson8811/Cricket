@@ -82,88 +82,110 @@ $(".search-form__button--op").click(function(){
       }
     ]
   });
+  
 
-  $('.similar-news__slider .swiper-container').each(function(){
-    var events_slider = new Swiper(this, {
-      slidesPerView: 'auto',
-    slidesPerGroup: 1,
-    spaceBetween: 15,
-    // autoplay:true,
-    loop:true,
-    // navigation: {
-    //     nextEl: $(this).parent().find('.swiper-button-next'),
-    //     prevEl: $(this).parent().find('.swiper-button-prev'),
-    // },
+  // $('.similar-news__slider .swiper-container').each(function(){
+  //   var events_slider = new Swiper(this, {
+  //     slidesPerView: 'auto',
+  //   slidesPerGroup: 1,
+  //   spaceBetween: 15,
+  
+  //   loop:true,
+ 
     
-    breakpoints: {
-        640: {
-          slidesPerGroup: 2,
-          spaceBetween: 20,
-        },
-        767: {
-          slidesPerGroup: 2,
-          spaceBetween: 20,
-          slidesPerGroup: 2,
-        },
-        1200: {
-          slidesPerView: 3,
-          slidesPerGroup: 3,
-          spaceBetween: 20,
-        },
-      } 
-  });
-  });
-  $('.players__slider .swiper-container').each(function(){
-    var events_slider = new Swiper(this, {
-      watchOverflow:true,
-      slidesPerView: 3,
-    slidesPerGroup: 3,
-    spaceBetween: 10,
+  //   breakpoints: {
+  //       640: {
+  //         slidesPerGroup: 2,
+  //         spaceBetween: 20,
+  //       },
+  //       767: {
+  //         slidesPerGroup: 2,
+  //         spaceBetween: 20,
+  //         slidesPerGroup: 2,
+  //       },
+  //       1200: {
+  //         slidesPerView: 3,
+  //         slidesPerGroup: 3,
+  //         spaceBetween: 20,
+  //       },
+  //     } 
+  // });
+  // });
+
+  $('.similar-news__slider .swiper-wrapper').slick({
+
     autoplay:true,
-    loop:false,
-    navigation: {
-        nextEl: $(this).parent().find('.swiper-button-next'),
-        prevEl: $(this).parent().find('.swiper-button-prev'),
-    },
-    
-    breakpoints: {
-      450: {
-        slidesPerView: 4,
-        slidesPerGroup: 4,
-        spaceBetween: 20,
+    arrows:false,
+    slidesToShow:3,
+    slidesToScroll:3,
+    speed:700,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          variableWidth:true,
+          slidesToShow:2,
+          slidesToScroll:2,
+        }
       },
-        640: {
-          slidesPerGroup: 5,
-          slidesPerView: 5,
-          spaceBetween: 20,
-        },
-        850: {
-          slidesPerView: 7,
-          slidesPerGroup: 7,
-          spaceBetween: 20,
-        },
-        900: {
-          slidesPerView: 8,
-          slidesPerGroup: 8,
-          spaceBetween: 20,
-        },
-        1024: {
-          slidesPerView: 7,
-          slidesPerGroup: 7,
-          spaceBetween: 20,
-        },
-        1150: {
-          slidesPerView: 8,
-          slidesPerGroup: 8,
-          spaceBetween: 20,
-        },
-        1280: {
-          slidesPerGroup: 9,
-          spaceBetween: 20,
-          slidesPerView: 9,
-        },
-      } 
+      
+     
+     
+
+    ]
   });
+  $('.ticker__text').simplemarquee({
+    speed: 100,
+    cycles: Infinity,
+    space: 100,
+    delayBetweenCycles: 0,
+    handleHover: false,
+    handleResize: true
+});
+  $('.players__slider .swiper-wrapper').slick({
+    nextArrow: '<div class="swiper-arrow swiper-button-next"></div>',
+    prevArrow: '<div class="swiper-arrow swiper-button-prev"></div>',
+    autoplay:true,
+    slidesToShow:7,
+    slidesToScroll:7,
+    speed:700,
+    responsive: [
+      {
+        breakpoint: 1150,
+        settings: {
+          slidesToShow:6,
+          slidesToScroll:6,
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow:5,
+          slidesToScroll:5,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow:4,
+          slidesToScroll:4,
+        }
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow:3,
+          slidesToScroll:3,
+        }
+      },
+      {
+        breakpoint: 350,
+        settings: {
+          slidesToShow:2,
+          slidesToScroll:2,
+        }
+      },
+    ]
   });
   $('.ticker__text').simplemarquee({
     speed: 100,
